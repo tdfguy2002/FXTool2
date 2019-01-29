@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>FXTool</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootswatch/4.2.1/materia/bootstrap.min.css">
+	<script type="text/javascript" src='./filelist.js'></script>
+
+<style>
+
+/*#droptarget {
+  float: top; 
+  width: 200px; 
+  height: 5px;
+  margin: 5px;
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px solid #aaaaaa;
+}*/
+/*
+#test {
+  float: top; 
+  width: 200px; 
+  height: 45px;
+  margin: 55px;
+  border: 1px solid #aaaaaa;
+*/}
+
+	.wrapper {
+		grid-template-columns: repeats(3, 1fr);
+		grid-gap: 1em;
+		grid-auto-rows: 100px;
+		}
+
+	.row {
+		display: grid;
+		grid-template-columns: 30% 111%;
+		}
+
+	.btn {
+		border: none;
+		/* padding: 5px 20px; */
+		}
+
+	.tr  {
+	  	list-style-type: none;
+		}
+
+	#td {
+		border: 1px solid black;
+	}
+
+	.leftnav {
+		border: 1px solid black;
+		height: 500px;
+		}
+
+	.filelist {
+		display: block;
+  		height: 450px;
+  		overflow-y: scroll;
+  		overflow-x: scroll; 
+		border: 1px solid black;
+		margin:  15px;
+		padding: 5px;
+		}
+
+	.wrapper {
+		width: 95%;
+		margin: 5px;
+	}
+	
+</style>
+</head>
+<body>
+	 
+
+<div class="wrapper container-fluid mx-2">
+  	<div class="row">
+	    <div style="background-color:#e8e9ea;">
+	    	<h3>Templates</h3>
+	    	<div class="leftnav">
+		      	<table title="this is the button div" class="filelist" id="fileTable" draggable="true"><tbody></tbody>
+						<button class="btn btn-primary btn-sm type="button" id="mybutton" onclick="getList();">get list</button>
+						<button class="btn btn-primary btn-sm type="button" id="mybutton2" onclick="clearList();">clear</button>
+						<button class="btn btn-primary btn-sm type="button" id="getId" onclick="getFileId();">get ID</button>
+				</table>
+			</div>
+	    </div>
+
+		<div class="col-sm-9 col-md-6 col-lg-8" style="background-color:#9dbdf2;">
+			<h3>Graphics Controls</h3>
+		    <div>
+		    	<div id="test">
+		    		<p draggable="true" id="dragtarget">ABC</p>
+		    	</div>	
+				
+				<div>
+					<table class="table table-striped">
+						<tbody>
+								<tr></tr>
+									<td id="td" style="background-color:#e3e4e5"><div id="droptarget">drop zone</div></td>
+								<tr></tr>
+									<td id="td" style="background-color: #cce4fc"><div id="droptarget">drop zone</div></td>
+								<!-- <tr></tr>
+									<td id="td"><div id="droptarget">drop zone</div></td>
+								<tr></tr>
+									<td id="td"><div id="droptarget">drop zone</div></td>
+								<tr></tr>
+									 <td id="td"><div id="droptarget">drop zone</div></td> -->
+						</tbody>
+					</table>
+				</div>
+	    	</div>
+	  	</div>
+
+
+
+
+
+<script type="text/javascript" src='./draggable.js'></script>
+</body>
+</html>
