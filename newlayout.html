@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>FX Tool Layout</title>
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootswatch/4.2.1/materia/bootstrap.min.css">
-  </head>
-  <body>
-    <div class="container float-left">
-      <div class="row bg-danger" style="height:200px">
-        <div class="col-1">
-          this is another div
-        </div>
-          <div class="col-1 bg-success">
-            something in the first div
-          </div>
-          <div class="col-4 bg-warning">
-            something in div 2
-          </div>
-          <div class="col-3">
-            something new
-          </div>
-        </div>
-      </div>
-    </body>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Nested Columns - or that's the hope</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootswatch/4.2.1/materia/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-9 bg-success">
+				Level 1: .col-sm-9
+				<div class="row">
+					<div class="col-8 bg-warning">
+						Level 2: .col-8 .col-sm-6
+					</div>
+					<div class="col-3 col-sm-4 bg-danger">
+						Level 2: .col-3 .col-sm-4
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
