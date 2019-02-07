@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>FXTool</title>
+	<link rel="stylesheet" href="simplex_bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootswatch/4.2.1/materia/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"> -->
+	<script type="text/javascript" src="./filelist.js"></script>
+	<style>
+
+		#leftheader {
+		border: 1px solid black;
+		background-color: yellow;
+	}
+
+	.wrapper {
+		grid-template-columns: repeats(4, 1fr);
+		grid-gap: 1em;
+		grid-auto-rows: 100px;
+		}
+
+	.row {
+		display: grid;
+		grid-template-columns: 28% 75%;
+		}
+
+	li {
+		border: none;
+		/* padding: 5px 20px; */
+		}
+
+	.tr  {
+	  	list-style-type: none;
+	  	line-height: 5px;
+		}
+
+	#td {
+		border: 1px solid black;
+	}
+
+	.leftnav {
+		border: 0px solid black;
+		height: 450px;
+		}
+
+	.filelist {
+		display: block;
+  		height: 420px;
+  		width: 230px;
+  		overflow-y: scroll;
+  		overflow-x: scroll; 
+		border: 0px solid black;
+		margin:  5px;
+		padding: 5px;
+		}
+
+	.wrapper {
+		width: 95%;
+		margin: 5px;
+	}
+	
+</style>
+</head>
+
+<body>
+
+	<div class="wrapper container-fluid mx-2">
+		<div class="row">
+			<div style="background-color:#e8e9ea;">
+				<span>
+					<h4 class="m-2">Templates</h4>
+				</span>
+				<table class="table table-sm">
+					<thead style="border: 1px solid black"></thead>
+					<tbody>
+						<tr>
+							<td> <input class="form-control mr-2" placeholder="Name Contains..." type="text">
+								<div class="leftnav p-2">
+									<button class="btn btn-outline-dark btn-sm button" id="mybutton" onclick="getList();">
+										<i class="fas fa-film"></i> get list<button class="btn btn-outline-dark btn-sm" id="mybutton2" onclick="clearList();">
+											<i class="fas fa-trash"></i> clear</button><button class="btn btn-outline-dark btn-sm" id="getId" onclick="getFileId();">getID</button>
+
+										<table title="this is the button div" class="filelist" id="fileTable" draggable="true">
+											<tbody>
+											</tbody>
+										</table>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="container col-sm" style="background-color:#9dbdf2;">
+				<div class="row">
+					<div class="col">
+
+						<h4 class="bg-success">Graphics Controls</h4>
+
+					</div>
+
+				</div>
+
+				<div class="row float-left" style="width: 40px; padding:15px;">
+					<div class="row">
+						<div style="width: 30px; padding:0px;">
+							Layer
+							<div class="row">
+
+								<!-- <div class="bg-warning" style="width: 120px">
+											col sub2
+										</div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-4 bg-warning" style="border: 25px; margin:35px">
+					<h4>Staged Template</h4>
+					<ul class="list-group" style="width: 400px">
+						<li class="list-group-item border-0 p-2" id="layer8" ondragleave="resetLayerId('layer8');" ondragover="overLayerList('layer8');">layer
+							8</li>
+						<li class="list-group-item border-0 p-2" id="layer7" ondragleave="resetLayerId('layer7');" ondragover="overLayerList('layer7');">layer
+							7</li>
+						<li class="list-group-item border-0 p-2" id="layer6" ondragleave="resetLayerId('layer6');" ondragover="overLayerList('layer6');">layer
+							6</li>
+						<li class="list-group-item border-0 p-2" id="layer5" ondragleave="resetLayerId('layer5');" ondragover="overLayerList('layer5');">layer
+							5</li>
+						<li class="list-group-item border-0 p-2" id="layer4" ondragleave="resetLayerId('layer4');" ondragover="overLayerList('layer4');">layer
+							4</li>
+						<li class="list-group-item border-0 p-2" id="layer3" ondragleave="resetLayerId('layer3');" ondragover="overLayerList('layer3');">layer
+							3</li>
+						<li class="list-group-item border-0 p-2" id="layer2" ondragleave="resetLayerId('layer2');" ondragover="overLayerList('layer2');">layer
+							2</li>
+						<li class="list-group-item border-0 p-2" id="layer1" ondragleave="resetLayerId('layer1');" ondragover="overLayerList('layer1');">layer
+							1</li>
+					</ul>
+				</div>
+
+				<!--  <table class="table table-striped" style="border-spacing: 0;line-height: .5">
+						  <tbody>
+						  </tbody>
+						</table>
+						<div id="droptarget">XX</div>  </div> -->
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+	</div>
+</body>
+<script type="text/javascript" src="./draggable.js"></script>
+
+</html>

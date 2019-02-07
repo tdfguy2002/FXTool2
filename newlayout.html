@@ -5,22 +5,63 @@
 	<meta charset="UTF-8">
 	<title>Nested Columns - or that's the hope</title>
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootswatch/4.2.1/materia/bootstrap.min.css">
+	<style>
+		.item1 {
+			grid-area: header;
+		}
+
+		.item2 {
+			grid-area: menu;
+		}
+
+		.item3 {
+			grid-area: main;
+		}
+
+		.item4 {
+			grid-area: right;
+		}
+
+		.item5 {
+			grid-area: footer;
+		}
+
+		.grid-container {
+			display: grid;
+			grid-row: 2 / span 3;
+			grid-column: span 2;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-areas:
+				'menu header header header header header'
+				'menu main main main main main'
+				'menu footer footer footer footer footer';
+			grid-gap: 2px;
+			background-color: #2196F3;
+			padding: 2px;
+		}
+
+		.grid-container > div {
+			background-color: rgba(255, 255, 255, 0.8);
+			text-align: center;
+			padding: 20px 0;
+			font-size: 14px;
+		}
+
+	</style>
 </head>
 
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-9 bg-success">
-				Level 1: .col-sm-9
-				<div class="row">
-					<div class="col-8 bg-warning">
-						Level 2: .col-8 .col-sm-6
-					</div>
-					<div class="col-3 col-sm-4 bg-danger">
-						Level 2: .col-3 .col-sm-4
-					</div>
-				</div>
-			</div>
-		</div>
+
+	<h1>Grid Layout</h1>
+
+	<p>This grid layout contains six columns and three rows:</p>
+
+	<div class="grid-container">
+		<div class="item1">Header</div>
+		<div class="item2">Menu</div>
+		<div class="item3">Main</div>
+		<div class="vp-item">Right</div>
+		<div class="vp-item">Footer</div>
 	</div>
+
 </body>

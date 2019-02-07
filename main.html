@@ -1,156 +1,194 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<title>FXTool</title>
-	<link rel="stylesheet" href="simplex_bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootswatch/4.2.1/materia/bootstrap.min.css">
-	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
-      crossorigin="anonymous"> -->
+	<title>FX Tool v2.0 </title>
+
 	<script type="text/javascript" src="./filelist.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootswatch/4.2.1/materia/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+	 crossorigin="anonymous">
 	<style>
 
-		#leftheader {
-		border: 1px solid black;
-		background-color: yellow;
+
+		.wrapper{
+      display:grid;
+	  width: 900px;
+	  height: 450px;
+	  margin: 10px; 
+      grid-template-columns:245px 200px 225px 225px;
+      grid-auto-rows:32px 32px 150px 190px 70px;
+      grid-gap: 5px;
+      justify-items:stretch;
+      align-items:stretch;
+    }
+
+    .wrapper > div{
+      background:#eee;
+      padding: 5px;
+    }
+    .wrapper > div:nth-child(odd){
+      background:#ddd;
+    }
+
+    .box1{
+      /* align-self:start; */
+      grid-column: 2/3;
+      grid-row:3/5;
+	  grid-column-start: 0;
+	  border: 1px solid rgb(199, 198, 198);
+	  border-radius: 4px;
+    }
+
+    .box2{
+      /*align-self:end;*/
+	  grid-column: 3/5;
+      grid-row:3/5;
+	  border: 1px solid rgb(199, 198, 198);
+	  border-radius: 4px;
+    }
+
+    .box3{
+      /*justify-self:end;*/
+      grid-column:2/4;
+      grid-row:5;
+	  padding: 5px; 
+	  border: 1px solid rgb(199, 198, 198);
+	  border-radius: 4px;
+    }
+
+	.box4 {
+		grid-column:1/2;
+		margin: 2px;
+		border: 1px solid rgb(199, 198, 198);
+		border-radius: 4px;
 	}
 
-	.wrapper {
-		grid-template-columns: repeats(4, 1fr);
-		grid-gap: 1em;
-		grid-auto-rows: 100px;
-		}
-
-	.row {
-		display: grid;
-		grid-template-columns: 28% 75%;
-		}
-
-	li {
-		border: none;
-		/* padding: 5px 20px; */
-		}
-
-	.tr  {
-	  	list-style-type: none;
-	  	line-height: 5px;
-		}
-
-	#td {
-		border: 1px solid black;
+	.box5 {
+		grid-column: 2/5;
+		margin: 2px;
+		border: 1px solid rgb(199, 198, 198);
+		border-radius: 4px;
 	}
 
-	.leftnav {
-		border: 0px solid black;
-		height: 450px;
-		}
+	.box6 {
+		grid-column: 2/5;
+		grid-row-start: 2;
+		margin: 2px;
+		border: 1px solid rgb(199, 198, 198);
+		border-radius: 4px;
+	}
+
+	.box9 {
+      grid-column:4/5;
+      grid-row:5;
+	  padding: 5px; 
+	  border: 1px solid rgb(199, 198, 198);
+	  border-radius: 4px;
+    }
 
 	.filelist {
 		display: block;
-  		height: 420px;
+  		height: 410px;
   		width: 230px;
   		overflow-y: scroll;
   		overflow-x: scroll; 
-		border: 0px solid black;
+		border: 0px solid rgb(198, 199, 199);
 		margin:  5px;
 		padding: 5px;
 		}
 
-	.wrapper {
-		width: 95%;
-		margin: 5px;
-	}
-	
-</style>
+	.leftnav {
+		border: 0px solid rgb(208, 239, 247);
+		margin: 0px;
+		padding: 0px;
+		height: 470px;
+		}
+
+	li:nth-child(even) {
+		background-color: rgb(220, 237, 245);
+		}
+
+	tr:nth-child(even) {
+		background-color: rgb(220, 237, 245);
+		}
+
+  </style>
 </head>
 
 <body>
+	<div class="wrapper">
+		<div class="box box4">
+			<h5>Templates</h5>
+		</div>
+		<div class="box box5">
+			<h5>Graphics Control</h5>
+		</div>
+		<div class="box box6">
+			<i class="fas fa-play"></i>
+			<i class="fas fa-pause"></i>
+			<i class="fas fa-eject"></i>
+		</div>
+		<div class="box box1">
+			<div style="width: 180px;">
+				<h5>Staged Templates</h5>
+				<ul class="list-group">
+					<li class="list-group-item border-0 p-2" id="layer8" ondragleave="resetLayerId('layer8');" ondragover="overLayerList('layer8');">layer
+						8</li>
+					<li class="list-group-item border-0 p-2" id="layer7" ondragleave="resetLayerId('layer7');" ondragover="overLayerList('layer7');">layer
+						7</li>
+					<li class="list-group-item border-0 p-2" id="layer6" ondragleave="resetLayerId('layer6');" ondragover="overLayerList('layer6');">layer
+						6</li>
+					<li class="list-group-item border-0 p-2" id="layer5" ondragleave="resetLayerId('layer5');" ondragover="overLayerList('layer5');">layer
+						5</li>
+					<li class="list-group-item border-0 p-2" id="layer4" ondragleave="resetLayerId('layer4');" ondragover="overLayerList('layer4');">layer
+						4</li>
+					<li class="list-group-item border-0 p-2" id="layer3" ondragleave="resetLayerId('layer3');" ondragover="overLayerList('layer3');">layer
+						3</li>
+					<li class="list-group-item border-0 p-2" id="layer2" ondragleave="resetLayerId('layer2');" ondragover="overLayerList('layer2');">layer
+						2</li>
+					<li class="list-group-item border-0 p-2" id="layer1" ondragleave="resetLayerId('layer1');" ondragover="overLayerList('layer1');">layer
+						1</li>
+				</ul>
+			</div>
+		</div>
 
-		<div class="wrapper container-fluid mx-2">
-				<div class="row">
-					<div style="background-color:#e8e9ea;">
-						<span>
-							<h4 class="m-2">Templates</h4>
-						</span>
-						<table class="table table-sm">
-							<thead style="border: 1px solid black"></thead>
-							<tbody>
-								<tr>
-									<td> <input class="form-control mr-2" placeholder="Name Contains..." type="text">
-										<div class="leftnav p-2">
-											<button class="btn btn-outline-dark btn-sm type=" button" id="mybutton" onclick="getList();">
-												<i class="fas fa-film"></i> get list<button class="btn btn-outline-dark btn-sm" id="mybutton2" onclick="clearList();">
-													<i class="fas fa-trash"></i> clear</button><button class="btn btn-outline-dark btn-sm" id="getId" onclick="getFileId();">getID</button>
-		
-												<table title="this is the button div" class="filelist" id="fileTable" draggable="true">
-													<tbody>
-													</tbody>
-												</table>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-		
-					<div class="container col-sm" style="background-color:#9dbdf2;">
-						<div class="row">
-							<div class="col">
-		
-								<h4 class="bg-success">Graphics Controls</h4>
-		
+		<div class="box box2">Box 2</div>
+
+		<div class="box box3">Box 3
+			
+		</div>
+
+		<div class="box box9">
+			<i class="fas fa-wrench fa-2x"></i>
+			<i class="fas fa-lock fa-2x"></i>
+			<i class="fas fa-sync fa-2x"></i>
+		</div>
+
+		<div style="background-color:#fff; margin: 0px" id="leftnav">
+			<table>
+				<thead style="border: 0px solid black"></thead>
+				<tbody>
+					<tr>
+						<td>
+							<input class="form-control" placeholder="Name Contains..." type="text">
+							<div class="leftnav">
+								<button class="btn btn-outline-dark btn-sm button" id="mybutton" onclick="getList();">
+									<i class="fas fa-film"></i> get list<button class="btn btn-outline-dark btn-sm" id="mybutton2" onclick="clearList();">
+										<i class="fas fa-trash"></i> clear</button><button class="btn btn-outline-dark btn-sm" id="getId" onclick="getFileId();">getID</button>
+
+									<table title="this is the button div" class="filelist" id="fileTable" draggable="true">
+										<tbody>
+										</tbody>
+									</table>
 							</div>
-		
-						</div>
-		
-						<div class="row float-left" style="width: 40px; padding:15px;">
-							<div class="row">
-								<div style="width: 30px; padding:0px;">
-									Layer
-									<div class="row">
-									
-										<!-- <div class="bg-warning" style="width: 120px">
-											col sub2
-										</div> -->
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-4 bg-warning" style="border: 25px; margin:35px">
-							<h4>Staged Template</h4>
-							<ul class="list-group" style="width: 400px">
-								<li class="list-group-item border-0 p-2" id="layer8" ondragleave="resetLayerId('layer8');" ondragover="overLayerList('layer8');">layer
-									8</li>
-								<li class="list-group-item border-0 p-2" id="layer7" ondragleave="resetLayerId('layer7');" ondragover="overLayerList('layer7');">layer
-									7</li>
-								<li class="list-group-item border-0 p-2" id="layer6" ondragleave="resetLayerId('layer6');" ondragover="overLayerList('layer6');">layer
-									6</li>
-								<li class="list-group-item border-0 p-2" id="layer5" ondragleave="resetLayerId('layer5');" ondragover="overLayerList('layer5');">layer
-									5</li>
-								<li class="list-group-item border-0 p-2" id="layer4" ondragleave="resetLayerId('layer4');" ondragover="overLayerList('layer4');">layer
-									4</li>
-								<li class="list-group-item border-0 p-2" id="layer3" ondragleave="resetLayerId('layer3');" ondragover="overLayerList('layer3');">layer
-									3</li>
-								<li class="list-group-item border-0 p-2" id="layer2" ondragleave="resetLayerId('layer2');" ondragover="overLayerList('layer2');">layer
-									2</li>
-								<li class="list-group-item border-0 p-2" id="layer1" ondragleave="resetLayerId('layer1');" ondragover="overLayerList('layer1');">layer
-									1</li>
-							</ul>
-						</div>
-		
-						<!--  <table class="table table-striped" style="border-spacing: 0;line-height: .5">
-						  <tbody>
-						  </tbody>
-						</table>
-						<div id="droptarget">XX</div>  </div> -->
-					</div>
-				</div>
-			</div>
-			</div>
-			</div>
-			</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
 </body>
 <script type="text/javascript" src="./draggable.js"></script>
 
