@@ -19,7 +19,7 @@
 	  /*                      1    2    3    4     5     6     7    8    9    10    11   12   13   14   15     */
       grid-template-columns:10px 210px 10px 10px 100px 100px 195px 10px 60px 120px 100px 50px 20px;
       grid-auto-rows:34px 46px 140px 180px 10px 70px 40px 70px;
-      grid-gap: 5px;
+      grid-gap: 8px;
       justify-items:stretch;
       align-items:stretch;
     }
@@ -134,11 +134,14 @@
 
 	.lockwrench {
 	  /* lock wrench reload */
-      grid-column:11/14;
-      grid-row:6/7;
+    grid-column:11/14;
+    grid-row:6/7;
 	  padding: 5px; 
 	  border: 1px solid rgb(121, 119, 119);
 	  border-radius: 3px;
+		text-align: center;
+		margin: auto;
+		
     }
 
 	.boxtype {
@@ -175,6 +178,19 @@
 		background-color: rgb(239, 249, 249);
 		}
 
+	.textbutton1 {
+		background-color: rgb(117, 122, 117);
+		border: none;
+		color: white;
+		padding: 0px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 14px;
+		margin: 4px 4px;
+		border-radius: 50%;
+		list-style: none;
+		}
 
   </style>
 </head>
@@ -195,9 +211,14 @@
 			<i class="fas fa-eject fa-2x"></i>
 		</div>
 
-		<div class="box fadeinout"></div>
+
+		<div class="box fadeinout">
+			<i class="fas fa-eject fa-2x" style="float: left;padding: 3px" onclick="unloadTemplate()" ;></i>
+		</div>
+
+
 		<div class="box loadunload">
-			<i class="fas fa-download fa-2x"></i>
+			<i class="fas fa-download fa-2x" style="padding: 4px" onclick="loadStaged()" ;></i>
 		</div>
 
 		<div class="box staged">
@@ -224,7 +245,18 @@
 			</div>
 		</div>
 
-		<div class="box stagedloaded">Loaded Templates</div>
+		<div class="box stagedloaded">
+			<table class="table">
+				  <col width="260">
+  				<col width="80">
+				<tr>
+					<th class="loaded">Loaded Template</th>
+					<th>Visibility</th>
+					<th>Animation</th>
+					<th>Locks</th>
+				</tr>
+			</table>
+		</div>
 
 		<div class="box mixercontrol">
 			<h6>Mixer Controls</h6>
@@ -250,14 +282,14 @@
 
 		<div class="box boxtype">
 			<ul class="list-group">
-				<li class="list-group-item border-0 p-2 m-0">T</li>
-				<li class="list-group-item border-0 p-2 m-0">T</li>
-				<li class="list-group-item border-0 p-2 m-0">T</li>
-				<li class="list-group-item border-0 p-2 m-0">T</li>
-				<li class="list-group-item border-0 p-2 m-0">T</li>
-				<li class="list-group-item border-0 p-2 m-0">T</li>
-				<li class="list-group-item border-0 p-2 m-0">T</li>
-				<li class="list-group-item border-0 p-2 m-0">T</li>
+				<img src="./letter-t-latin-key-512.png" style="margin:6px;width:26px;height:26px;">
+				<img src="./letter-t-latin-key-512.png" style="margin:6px;width:26px;height:26px;">
+				<img src="./letter-t-latin-key-512.png" style="margin:6px;width:26px;height:26px;">
+				<img src="./letter-t-latin-key-512.png" style="margin:6px;width:26px;height:26px;">
+				<img src="./letter-t-latin-key-512.png" style="margin:6px;width:26px;height:26px;">
+				<img src="./letter-t-latin-key-512.png" style="margin:6px;width:26px;height:26px;">
+				<img src="./letter-t-latin-key-512.png" style="margin:6px;width:26px;height:26px;">
+				<img src="./letter-t-latin-key-512.png" style="margin:6px;width:26px;height:26px;">
 			</ul>
 		</div>
 
@@ -296,5 +328,6 @@
 
 </body>
 <script type="text/javascript" src="./draggable.js"></script>
+<script type="text/javascript" src="./fxtool.js"></script>
 
 </html>
