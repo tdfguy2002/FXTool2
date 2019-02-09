@@ -1,5 +1,6 @@
 
 
+
 var drag = document.getElementById("dragtarget");
 console.log(drag);
 
@@ -46,7 +47,7 @@ drag.addEventListener("dragstart", function(event) {
 
 function overLayerList(layer) {
     //event.preventDefault();
-    console.log(layer);
+    //console.log(layer);
     //debugger;
 
     var layId = document.getElementById(layer);
@@ -66,7 +67,6 @@ function overLayerList(layer) {
         var tableRow1 = document.createElement("tr");
         var fileName1 = document.createTextNode(data);
         document.getElementById("droptarget").innerHTML = name;
-        //document.getElementById("droptarget").id = layer;
         resetLayerId(layer);
     });
 }
@@ -75,5 +75,6 @@ function resetLayerId(layer) {
     var newLayerId = document.getElementById('droptarget');
     newLayerId.id = layer;
 }
+
 
 
