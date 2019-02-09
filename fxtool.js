@@ -16,7 +16,6 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-
 async function loadStaged() {
     var command = '';
     for (layerID = 8; layerID > 0; layerID--) {
