@@ -18,6 +18,7 @@ function sleep(ms) {
 
 async function loadStaged() {
     var command = '';
+    var success ='';
     for (layerID = 8; layerID > 0; layerID--) {
 
         var templateFilename = document.getElementById("layer" + layerID).innerHTML;
