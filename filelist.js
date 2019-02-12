@@ -17,48 +17,49 @@ function sendCmd(cmd) {
 
 
 // Send R4 command to request template file list
-function getList() {
-	sendCmd('R4$VIDEO:');
-}
+// function getList() {
+// 	console.log(this +  "called....")
+// 	sendCmd2('R4$VIDEO:');
+// }
 
 // Handle receiving template file list
-function receiveFileList(data) {
-	//console.log('Received: ' + data);
-	if (data != 'R51end:') {
-		graphics_files.push(data);
-		client.write('R5$VIDEO:');
-	} else if (data == 'R51end:') {
-		//console.log("destroying");
-		client.destroy();
-		graphics_files.forEach(function (value) {
-			var x = value.toString().lastIndexOf('.');
-			var tableRow = document.createElement("tr");
-			var fileName = document.createTextNode(value.toString().slice(3, -1));
+// function receiveFileList(data) {
+// 	console.log('Received: ' + data);
+// 	if (data != 'R51end:') {
+// 		graphics_files.push(data);
+// 		client.write('R5$VIDEO:');
+// 	} else if (data == 'R51end:') {
+// 		//console.log("destroying");
+// 		client.destroy();
+// 		graphics_files.forEach(function (value) {
+// 			var x = value.toString().lastIndexOf('.');
+// 			var tableRow = document.createElement("tr");
+// 			var fileName = document.createTextNode(value.toString().slice(3, -1));
 
-			tableRow.appendChild(fileName);
+// 			tableRow.appendChild(fileName);
 
-			tableRow.onmouseover = function () {
-				name = value.toString().slice(3, -1);
-				console.log(name);
-				//debugger;
-				document.getElementById(name).id = "dragtarget";
-			}
+// 			tableRow.onmouseover = function () {
+// 				name = value.toString().slice(3, -1);
+// 				console.log(name);
+// 				//debugger;
+// 				document.getElementById(name).id = "dragtarget";
+// 			}
 
-			tableRow.onmouseout = function () {
-				name = value.toString().slice(3, -1);
-				console.log(name);
-				document.getElementById("dragtarget").id = name;
-			}
+// 			tableRow.onmouseout = function () {
+// 				name = value.toString().slice(3, -1);
+// 				console.log(name);
+// 				document.getElementById("dragtarget").id = name;
+// 			}
 
-			tableRow.id = value.toString().slice(3, -1);
-			//tableRow.id = "dragtarget"
-			tableRow.draggable = "true";
+// 			tableRow.id = value.toString().slice(3, -1);
+// 			//tableRow.id = "dragtarget"
+// 			tableRow.draggable = "true";
 
-			document.getElementById("fileTable").appendChild(tableRow);
+// 			document.getElementById("fileTable").appendChild(tableRow);
 
-		});
-	}
-}
+// 		});
+// 	}
+// }
 
 //  oxTel response dispatcher
 function onData(data) {
@@ -68,6 +69,7 @@ function onData(data) {
 		case "R40":
 		case "R50":
 		case "R51":
+			console.log("switch function reached....");
 			receiveFileList(data);
 			break;
 		case oxCode.startsWith("R5"):
@@ -85,10 +87,10 @@ function onData(data) {
 client.on('data', onData);
 
 
-client.on('closed', function () {
-	console.log('Connection closed');
+// client.on('closed', function () {
+// 	console.log('Connection closed');
 
-});
+// });
 
 function clearList() {
 	var x = document.getElementById("fileTable").rows.length;
