@@ -97,7 +97,7 @@ function clearList() {
 	for (i = 0; i < x; i++) {
 		document.getElementById("fileTable").deleteRow(0);
 	}
-	graphics_files = [];
+	displayTemplateFiles = [];
 }
 
 function getFileId() {

@@ -11,7 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^4.0.2",
-    "electron-reload": "^1.4.0"
+    "electron-modal": "^1.0.0",
+    "electron-reload": "^1.4.0",
+    "eslint": "^5.13.0"
   },
   "devDependencies": {
     "devtron": "^1.4.0"

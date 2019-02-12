@@ -4,8 +4,8 @@
 
 var net = require('net');
 var client = new net.Socket();
-var templateFiles = [];
-
+var templateFiles = new Array;
+var timesCalled = 0;
 
 function makeConnection() {
     client.connect(9102, '10.10.154.97');
@@ -13,20 +13,21 @@ function makeConnection() {
 
 
 function sendCmd(command) {
-    //client.end(); 
-    //await client.close();
-    if (client.readyState === client.OPEN) {
-    } else {
+    console.log('sendCmd ...');
+    //debugger;
+    if (client.readyState === 'closed') {
         makeConnection();
     }
-
     client.write(command);
 }
 
 
 function getList() {
     clearList();
-	sendCmd('R4$VIDEO:');
+    timesCalled += 1;
+    console.log(timesCalled);
+    sendCmd('R4$VIDEO:');
+    //debugger;
 }
 
 
@@ -59,16 +60,14 @@ function unloadTemplate() {
 }
 
 
-function getList() {
-	sendCmd('R4$VIDEO:');
-}
-
-
 client.on('data', onData);
 
+client.on('close', function(had_error) {
+    console.log('closed ...');
+});
 
-client.on('error', function(err) {
-    console.log(arguments);
+client.on('error', function(error) {
+    console.log(error);
 });
 
 // Handle receiving template file list
@@ -78,13 +77,14 @@ function receiveFileList(data) {
 		templateFiles.push(data);
 		client.write('R5$VIDEO:');
 	} else if (data == 'R51end:') {  
-        
+        displayTemplateFiles();
     }
-    displayTemplateFiles();
+    
 }
 
 //  oxTel response dispatcher
 function onData(data) {
+    debugger;
 	var oxCode = data.toString().substring(0, 3);
 	switch (oxCode) {
 		case "R40":
