@@ -26,7 +26,6 @@ function overLayerList(layer) {
     var drop = document.getElementById("droptarget");
     drop.addEventListener("dragover", function(event) {
        event.preventDefault();
-    event.target.style.border = "1px solid purple";
     });
 
 

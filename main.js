@@ -10,7 +10,7 @@ require('electron-reload')(__dirname)
 let win
 
 function createWindow() {
-	win = new BrowserWindow({width:1200, height:650, resizable:true})
+	win = new BrowserWindow({width:1090, height:565, resizable:true})
 	// childWindow = new BrowserWindow({width:500, height:350, resizable:true, parent: win, modal: true, visible: false})
 
 	win.loadURL(url.format({
@@ -34,12 +34,11 @@ function createWindow() {
 app.on('ready', () => {
 	modal.setup();
 	createWindow();
-});
+})
 
-app.on('window-all-closed', ()=>{
-	if(process.platform !== 'darwin'){
-		app.quit()
-	}
+
+app.once('ready-to-show', () => {
+	getList;
 })
 
 app.on('activate', ()=> {

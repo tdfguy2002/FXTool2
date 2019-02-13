@@ -84,7 +84,6 @@ function receiveFileList(data) {
 
 //  oxTel response dispatcher
 function onData(data) {
-    debugger;
 	var oxCode = data.toString().substring(0, 3);
 	switch (oxCode) {
 		case "R40":
