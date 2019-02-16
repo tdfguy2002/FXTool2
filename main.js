@@ -19,11 +19,11 @@ function createWindow() {
 		slashes:true
 	}))
 
-	// childWindow.loadURL(url.format({
+	//  childWindow.loadURL(url.format({
 	// 	pathname:path.join(__dirname, 'modal.html'),
 	// 	protocol: 'file',
 	// 	slashes:true
-	// }))
+	//  }))
 
 	win.on('closed', () => {
 		win = null

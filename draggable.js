@@ -3,26 +3,14 @@
 // May relocated these to fxtool.js
 
 
-var drag = document.getElementById("dragtarget");
-console.log(drag);
-
-
-var drop = document.getElementById("droptarget");
-console.log(drop);
-
-/* Events fired on the drag target */
-
-drag.addEventListener("dragstart", function(event) {
-    console.log(event.target.id);
-    event.dataTransfer.setData("Text", event.target.id);
-    console.log("event.target.id: " + event.target.id);
-});
-
+var layerNumber = '';
 
 function overLayerList(layer) {
-    var layId = document.getElementById(layer);
-    console.log(layId);
-    layId.id = "droptarget";
+    layerNumber = document.getElementById(layer);
+    
+    console.log("layerNum: " + layerNumber);
+
+    layerNumber.id = "droptarget";
     var drop = document.getElementById("droptarget");
     drop.addEventListener("dragover", function(event) {
        event.preventDefault();

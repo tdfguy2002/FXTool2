@@ -13,7 +13,7 @@ function makeConnection() {
 
 
 function sendCmd(command) {
-    console.log('sendCmd ...');
+    //console.log('sendCmd ...');
     //debugger;
     if (client.readyState === 'closed') {
         makeConnection();
@@ -25,7 +25,7 @@ function sendCmd(command) {
 function getList() {
     clearList();
     timesCalled += 1;
-    console.log(timesCalled);
+    //console.log(timesCalled);
     sendCmd('R4$VIDEO:');
     //debugger;
 }
@@ -42,12 +42,12 @@ async function loadStaged() {
 
         var templateFilename = document.getElementById("layer" + layerID).innerHTML;
                  
-        console.log(templateFilename);
+        //console.log(templateFilename);
         if (templateFilename == ("layer " + layerID)) {
             //console.log("layer empty");
          } else {
             command = "R0" + (layerID - 1) + templateFilename + ":";
-            console.log("formed command: " + command);
+            //console.log("formed command: " + command);
             sendCmd(command);
             await sleep(300);
          }       

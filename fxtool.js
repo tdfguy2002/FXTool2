@@ -4,7 +4,7 @@
 
 
 function displayTemplateFiles() {
-    console.log(templateFiles.toString());
+    //console.log(templateFiles.toString());
     templateFiles.forEach(function (value) {
         var x = value.toString().lastIndexOf('.');
         var tableRow = document.createElement("tr");
@@ -13,10 +13,14 @@ function displayTemplateFiles() {
         tableRow.appendChild(fileName);
 
         tableRow.onmouseover = function () {
-            name = value.toString().slice(3, -1);
-            console.log(name);
-            //debugger;
-            document.getElementById(name).id = "dragtarget";
+            name = value.toString().slice(3, -1);                       /* set name to filename                   */
+            document.getElementById(name).id = "dragtarget";            /* set element ID to 'dragtarget'         */
+            var drag = document.getElementById("dragtarget");           /* set drag to element being hovered over */
+            drag.addEventListener("dragstart", function(event) {        /* add event listener to drag element     */
+                console.log("event: " + event);
+                event.dataTransfer.setData("Text", event.target.id);
+                console.log("event.target.id: " + event.target.id);
+            });
         }
 
         tableRow.onmouseout = function () {
