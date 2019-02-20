@@ -6,9 +6,10 @@
 var layerNumber = '';
 
 function overLayerList(layer) {
+    console.log("layer: " + layer);
     layerNumber = document.getElementById(layer);
     
-    console.log("layerNum: " + layerNumber);
+    //console.log(layerNumber);
 
     layerNumber.id = "droptarget";
     var drop = document.getElementById("droptarget");

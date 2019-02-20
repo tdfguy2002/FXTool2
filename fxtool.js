@@ -2,6 +2,13 @@
 // Date: Jan 2019
 
 
+function displayLoadedTemplates(data) {
+    aa = data.toString().slice(3, -1);
+    
+    document.getElementById("loadedLayer8").innerHTML = aa;
+}
+    
+
 
 function displayTemplateFiles() {
     //console.log(templateFiles.toString());
@@ -25,7 +32,6 @@ function displayTemplateFiles() {
 
         tableRow.onmouseout = function () {
             name = value.toString().slice(3, -1);
-            console.log(name);
             document.getElementById("dragtarget").id = name;
         }
 
