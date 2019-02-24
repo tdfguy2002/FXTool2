@@ -115,33 +115,46 @@ function receiveFileList(data) {
 
 //  oxTel response dispatcher
 function onData(data) {
-	console.log("data being recvd: " + data.toString());
+// 	console.log("data being recvd: " + data.toString());
+// 	var oxCode = data.toString().substring(0, 3);
+// 	switch (oxCode) {
+// 		case "R40":
+// 		case "R50":
+// 		case "R51":
+// 			receiveFileList(data);
+// 			break;
+// 		case oxCode.startsWith("R5"):
+// 			break;
+// 		case oxCode.startsWith("UE"):
+// 			break;
+// 		case "Y97":
+// 		case "Y96":
+// 		case "Y95":
+// 		case "Y94":
+// 		case "Y93":
+// 		case "Y92":
+// 		case "Y91":
+// 		case "Y90":
+// 			ll = data.toString().slice(2, 3);
+// 			console.log(ll);
+// 			receiveImageLoadTally(data, ll);
+// 			break;
+// 		default:
+// 			//console.log("unknown oxCode");
 
-	var oxCode = data.toString().substring(0, 3);
-	switch (oxCode) {
-		case "R40":
-		case "R50":
-		case "R51":
-			receiveFileList(data);
-			break;
-		case oxCode.startsWith("R5"):
-			break;
-		case oxCode.startsWith("UE"):
-			break;
-		case "Y97":
-		case "Y96":
-		case "Y95":
-		case "Y94":
-		case "Y93":
-		case "Y92":
-		case "Y91":
-		case "Y90":
-			ll = data.toString().slice(2, 3);
-			console.log(ll);
-			receiveImageLoadTally(data, ll);
-			break;
-		default:
-			//console.log("unknown oxCode");
+// 	}
+// }
 
+
+//
+// when data is received, parse into token by looking at header and tail 
+//
+
+class ReceivedData {
+	constructor(oxtelData) {
+		this._oxtelData = oxtelData;
 	}
 }
+
+// each token can more than one property
+// this will vary how the 
