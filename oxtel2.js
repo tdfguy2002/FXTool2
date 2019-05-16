@@ -9,7 +9,8 @@ var imageLoadTallyFiles = new Array;
 var timesCalled = 0;
 
 function makeConnection() {
-    client.connect(9102, '10.10.154.97');
+//    client.connect(9102, '10.10.154.97');
+	client.connect(9100, '10.10.55.67');
 	client.write('Y61');
 }
 

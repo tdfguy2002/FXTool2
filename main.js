@@ -13,6 +13,7 @@ function createWindow() {
 	win = new BrowserWindow({width:1090, height:565, resizable:true})
 	// childWindow = new BrowserWindow({width:500, height:350, resizable:true, parent: win, modal: true, visible: false})
 
+	console.log("createWindow");
 	win.loadURL(url.format({
 		pathname:path.join(__dirname, 'main.html'),
 		protocol: 'file',
@@ -38,6 +39,7 @@ app.on('ready', () => {
 
 
 app.once('ready-to-show', () => {
+	console.log("ready to show");
 	getList;
 })
 

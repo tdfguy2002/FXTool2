@@ -62,6 +62,7 @@
 table tbody tr td {
 	height: 25px;
 	border: 0px;
+	white-space: nowrap;
 }
 
 th {
@@ -71,7 +72,7 @@ th {
 
 .loadedpause {
 	/* load play unload */
-	grid-column: 10/12;
+	grid-column: 11/12;
 	grid-row-start: 2;
 	margin: 2px;
 	border: 1px solid #797777;
@@ -104,7 +105,7 @@ th {
 }
 
 .fadeinout {
-	grid-column: 7/10;
+	grid-column: 7/11;
 	grid-row: 2;
 	margin: 2px;
 	border: 1px solid #797777;

@@ -3,7 +3,7 @@
 
 
 function displayLoadedTemplates(data) {
-    aa = data.toString().slice(3, -1);
+    aa = data.toString();
     
     document.getElementById("loadedLayer8").innerHTML = aa;
 }
@@ -15,12 +15,12 @@ function displayTemplateFiles() {
     templateFiles.forEach(function (value) {
         var x = value.toString().lastIndexOf('.');
         var tableRow = document.createElement("tr");
-        var fileName = document.createTextNode(value.toString().slice(3, -1));
+        var fileName = document.createTextNode(value);
 
         tableRow.appendChild(fileName);
 
         tableRow.onmouseover = function () {
-            name = value.toString().slice(3, -1);                       /* set name to filename                   */
+            name = value.toString();                      /* set name to filename                   */
             document.getElementById(name).id = "dragtarget";            /* set element ID to 'dragtarget'         */
             var drag = document.getElementById("dragtarget");           /* set drag to element being hovered over */
             drag.addEventListener("dragstart", function(event) {        /* add event listener to drag element     */
@@ -31,11 +31,11 @@ function displayTemplateFiles() {
         }
 
         tableRow.onmouseout = function () {
-            name = value.toString().slice(3, -1);
+            name = value;
             document.getElementById("dragtarget").id = name;
         }
 
-        tableRow.id = value.toString().slice(3, -1);
+        tableRow.id = value.toString();
         //tableRow.id = "dragtarget"
         tableRow.draggable = "true";
 

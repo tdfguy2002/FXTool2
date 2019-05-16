@@ -8,7 +8,16 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 	 crossorigin="anonymous">
 	<link href="fxtool.css" rel="stylesheet" type="text/css">
+<!--	
 
+	<script type="text/javascript" src="./oxtel.js"></script>
+	<script type="text/javascript" src="./graphics-layer.js"></script>
+	<script type="text/javascript" src="./graphics.js"></script>
+	<script type="text/javascript" src="./file-manager.js"></script>
+-->
+	<script type="text/javascript" src="./draggable.js"></script>
+	<script type="text/javascript" src="./oxtel-don.js"></script>
+	<script type="text/javascript" src="./fxtool.js"></script>	
 </head>
 
 <body>
@@ -21,20 +30,30 @@
 			<h5>Graphics Control</h5>
 		</div>
 
+<!--
 		<div class="btn-group-lg box loadedpause">
 			<i class="fas fa-play fa-2x"></i>
 			<i class="fas fa-pause fa-2x"></i>
 			<i class="fas fa-eject fa-2x"></i>
 		</div>
-
+-->
 
 		<div class="box fadeinout">
-			<i class="fas fa-eject fa-2x" style="float: left;padding: 3px" onclick="unloadTemplate()" ;></i>
+			<img src="./images/unload.png" alt="Unload" style="width: 32px; height:32px; float: left;padding: 0px;margin:0px 32px 0px 2px" onclick="unloadTemplate();">
+
+			<img src="./images/fadeup.png" alt="Fade up" style="width: 32px; height:32px; float: left;padding: 0px;margin:0px 0px 0px 4px" onclick="fadeUp(0);">
+			<img src="./images/fadeup30.png" alt="Fade up" style="width: 32px; height:32px; float: left;padding: 0px;margin:0px 0px 0px 4px" onclick="fadeUp(30);">
+			<img src="./images/fadeup60.png" alt="Fade up" style="width: 32px; height:32px; float: left;padding: 0px;margin:0px 0px 0px 4px" onclick="fadeUp(60);">
+			<img src="./images/fadeup90.png" alt="Fade up" style="width: 32px; height:32px; float: left;padding: 0px;margin:0px 0px 0px 4px" onclick="fadeUp(90);">
+			<img src="./images/fadedown.png" alt="Fade down" style="width: 32px; height:32px; float: left;padding: 0px;margin:0px 0px 0px 4px" onclick="fadeDown(0);">
+			<img src="./images/fadedown30.png" alt="Fade down" style="width: 32px; height:32px; float: left;padding: 0px;margin:0px 0px 0px 4px" onclick="fadeDown(30);">
+			<img src="./images/fadedown60.png" alt="Fade down" style="width: 32px; height:32px; float: left;padding: 0px;margin:0px 0px 0px 4px" onclick="fadeDown(60);">
+			<img src="./images/fadedown90.png" alt="Fade down" style="width: 32px; height:32px; float: left;padding: 0px;margin:0px 0px 0px 4px" onclick="fadeDown(90);">
 		</div>
 
 
 		<div class="box loadunload">
-			<i class="fas fa-download fa-2x" style="padding: 4px" onclick="loadStagedTemplates()" ;></i>
+			<img src="./images/load.png" alt="Fade up" style="width: 32px; height:32px; float: left;padding: 0px;margin:0px 0px 0px 2px" onclick="loadStagedTemplates();">
 		</div>
 
 		<div class="box staged">
@@ -47,28 +66,28 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td id='layer8' ondragleave="resetLayerId('layer8');" ondragover="overLayerList('layer8');">layer8</td>
+							<td id='layer8' ondragleave="resetLayerId('layer8');" ondragover="overLayerList('layer8');" style="height: 35px">layer8</td>
 						</tr>
 						<tr>
-							<td id="layer7" ondragleave="resetLayerId('layer7');" ondragover="overLayerList('layer7');">layer7</td>
+							<td id="layer7" ondragleave="resetLayerId('layer7');" ondragover="overLayerList('layer7');" style="height: 35px">layer7</td>
 						</tr>
 						<tr>
-							<td id="layer6" ondragleave="resetLayerId('layer6');" ondragover="overLayerList('layer6');">layer6</td>
+							<td id="layer6" ondragleave="resetLayerId('layer6');" ondragover="overLayerList('layer6');" style="height: 35px">layer6</td>
 						</tr>
 						<tr>
-							<td id="layer5" ondragleave="resetLayerId('layer5');" ondragover="overLayerList('layer5');">layer5</td>
+							<td id="layer5" ondragleave="resetLayerId('layer5');" ondragover="overLayerList('layer5');" style="height: 35px">layer5</td>
 						</tr>
 						<tr>
-							<td id="layer4" ondragleave="resetLayerId('layer4');" ondragover="overLayerList('layer4');">layer4</td>
+							<td id="layer4" ondragleave="resetLayerId('layer4');" ondragover="overLayerList('layer4');" style="height: 35px">layer4</td>
 						</tr>
 						<tr>
-							<td id="layer3" ondragleave="resetLayerId('layer3');" ondragover="overLayerList('layer3');">layer3</td>
+							<td id="layer3" ondragleave="resetLayerId('layer3');" ondragover="overLayerList('layer3');" style="height: 35px">layer3</td>
 						</tr>
 						<tr>
-							<td id="layer2" ondragleave="resetLayerId('layer2');" ondragover="overLayerList('layer2');">layer2</td>
+							<td id="layer2" ondragleave="resetLayerId('layer2');" ondragover="overLayerList('layer2');" style="height: 35px">layer2</td>
 						</tr>
 						<tr>
-							<td id="layer1" ondragleave="resetLayerId('layer1');" ondragover="overLayerList('layer1');">layer1</td>
+							<td id="layer1" ondragleave="resetLayerId('layer1');" ondragover="overLayerList('layer1');" style="height: 35px">layer1</td>
 						</tr>
 					</tbody>
 				</table>
@@ -89,57 +108,57 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td id="loadedLayer8">&nbsp;</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">T</td>
-						</tr>
-						<tr>
-							<td id="loadedLayer7">&nbsp;</td>
-							<td></td>
+							<td id="loadedLayer8" onclick="onLoadedLayerClicked(8);" style="height: 35px">&nbsp;</td>
+							<td id="vis8">Hidden</td>
 							<td></td>
 							<td></td>
 							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">T</td>
 						</tr>
 						<tr>
-							<td id="loadedLayer6">&nbsp;</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">T</td>
-						</tr>
-						<tr>
-							<td id="loadedLaye5">&nbsp;</td>
-							<td></td>
+							<td id="loadedLayer7" onclick="onLoadedLayerClicked(7);" style="height: 35px">&nbsp;</td>
+							<td id="vis7">Hidden</td>
 							<td></td>
 							<td></td>
 							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">T</td>
 						</tr>
 						<tr>
-							<td id="loadedLayer4">&nbsp;</td>
-							<td></td>
+							<td id="loadedLayer6" onclick="onLoadedLayerClicked(6);" style="height: 35px">&nbsp;</td>
+							<td id="vis6">Hidden</td>
 							<td></td>
 							<td></td>
 							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">T</td>
 						</tr>
 						<tr>
-							<td id="loadedLayer3">&nbsp;</td>
+							<td id="loadedLayer5" onclick="onLoadedLayerClicked(5);" style="height: 35px">&nbsp;</td>
+							<td id="vis5">Hidden</td>
 							<td></td>
+							<td></td>
+							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">T</td>
+						</tr>
+						<tr>
+							<td id="loadedLayer4" onclick="onLoadedLayerClicked(4);" style="height: 35px">&nbsp;</td>
+							<td id="vis4">Hidden</td>
+							<td></td>
+							<td></td>
+							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">T</td>
+						</tr>
+						<tr>
+							<td id="loadedLayer3" onclick="onLoadedLayerClicked(3);" style="height: 35px">&nbsp;</td>
+							<td id="vis3">Hidden</td>
 							<td></td>
 							<td></td>
 							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">t</td>
 						</tr>
 						<tr>
-							<td id="loadedLayer2">&nbsp;</td>
-							<td></td>
+							<td id="loadedLayer2" onclick="onLoadedLayerClicked(2);" style="height: 35px">&nbsp;</td>
+							<td id="vis2">Hidden</td>
 							<td></td>
 							<td></td>
 							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">t</td>
 						</tr>
 						<tr>
-							<td id="loadedLayer1">&nbsp;</td>
-							<td></td>
+							<td id="loadedLayer1" onclick="onLoadedLayerClicked(1);" style="height: 35px">&nbsp;</td>
+							<td id="vis1">Hidden</td>
 							<td></td>
 							<td></td>
 							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">T</td>
@@ -173,9 +192,9 @@
 
 
 		<div class="box lockwrench">
-			<button type="button" class="btn fas fa-wrench fa-3x" style="padding:6px"></button>
-			<button type="button" class="btn fas fa-lock fa-3x" style="padding:6px"></button>
-			<button type="button" class="btn fas fa-sync fa-3x" style="padding:6px"></button>
+			<button type="button" class="btn fas fa-wrench fa-2x" style="padding:6px"></button>
+			<button type="button" class="btn fas fa-lock fa-2x" style="padding:6px"></button>
+			<button type="button" class="btn fas fa-sync fa-2x" style="padding:6px"></button>
 		</div>
 
 
@@ -205,8 +224,4 @@
 	</div>
 
 </body>
-<script type="text/javascript" src="./draggable.js"></script>
-<script type="text/javascript" src="./oxtel.js"></script>
-<script type="text/javascript" src="./fxtool.js"></script>
-
 </html>
