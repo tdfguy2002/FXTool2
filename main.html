@@ -102,73 +102,48 @@
 						<tr>
 							<th scope="col">Loaded Template</th>
 							<th scope="col">Visibility</th>
-							<th scope="col">Animation</th>
-							<th scope="col">Locks</th>
+
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td id="loadedLayer8" onclick="onLoadedLayerClicked(8);" style="height: 35px">&nbsp;</td>
 							<td id="vis8">Hidden</td>
-							<td></td>
-							<td></td>
-							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">T</td>
 						</tr>
 						<tr>
 							<td id="loadedLayer7" onclick="onLoadedLayerClicked(7);" style="height: 35px">&nbsp;</td>
-							<td id="vis7">Hidden</td>
-							<td></td>
-							<td></td>
-							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">T</td>
+							<td id="vis7">Hidden</td>							
 						</tr>
 						<tr>
 							<td id="loadedLayer6" onclick="onLoadedLayerClicked(6);" style="height: 35px">&nbsp;</td>
 							<td id="vis6">Hidden</td>
-							<td></td>
-							<td></td>
-							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">T</td>
 						</tr>
 						<tr>
 							<td id="loadedLayer5" onclick="onLoadedLayerClicked(5);" style="height: 35px">&nbsp;</td>
 							<td id="vis5">Hidden</td>
-							<td></td>
-							<td></td>
-							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">T</td>
 						</tr>
 						<tr>
 							<td id="loadedLayer4" onclick="onLoadedLayerClicked(4);" style="height: 35px">&nbsp;</td>
 							<td id="vis4">Hidden</td>
-							<td></td>
-							<td></td>
-							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">T</td>
 						</tr>
 						<tr>
 							<td id="loadedLayer3" onclick="onLoadedLayerClicked(3);" style="height: 35px">&nbsp;</td>
 							<td id="vis3">Hidden</td>
-							<td></td>
-							<td></td>
-							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">t</td>
 						</tr>
 						<tr>
 							<td id="loadedLayer2" onclick="onLoadedLayerClicked(2);" style="height: 35px">&nbsp;</td>
 							<td id="vis2">Hidden</td>
-							<td></td>
-							<td></td>
-							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">t</td>
 						</tr>
 						<tr>
 							<td id="loadedLayer1" onclick="onLoadedLayerClicked(1);" style="height: 35px">&nbsp;</td>
 							<td id="vis1">Hidden</td>
-							<td></td>
-							<td></td>
-							<td class="btn btn-group-sm" type="button" style="border:0px; padding:7px; margin:2px; float:right; text-align:center">T</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
 
-		<div class="box mixercontrol">
+		<!-- <div class="box mixercontrol">
 			<h6>Mixer Controls</h6>
 			<label for="source">Source</label>
 			<select id="source" style="padding: 2px; width:120px">
@@ -179,9 +154,9 @@
 				<option value="opel">Extermal 3</option>
 				<option value="opel">Extermal 4</option>
 			</select>
-		</div>
+		</div> -->
 
-		<div class="box externalio">
+		<!-- <div class="box externalio">
 			<h6>External I/O</h6>
 			<button class="btn btn-sm">Configure</button>
 		</div>
@@ -196,7 +171,7 @@
 			<button type="button" class="btn fas fa-lock fa-2x" style="padding:6px"></button>
 			<button type="button" class="btn fas fa-sync fa-2x" style="padding:6px"></button>
 		</div>
-
+ -->
 
 
 		<div class="box templatefiles" id="leftnav">
@@ -206,10 +181,7 @@
 					<tr>
 						<td>
 							<div class="leftnav">
-								<button class="btn btn-outline-dark btn-sm button" id="mybutton" onclick="getList();">
-									<i class="fas fa-film fa-1x"></i> get list<button class="btn btn-outline-dark btn-sm" id="mybutton2" onclick="clearList();">
-										<i class="fas fa-trash fa-1x"></i> clear</button><button class="btn btn-outline-dark btn-sm" id="getId"
-									 onclick="getFileId();">getID</button>
+								
 
 									<table title="this is the button div" class="filelist" id="fileTable" draggable="true">
 										<tbody>

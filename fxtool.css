@@ -3,8 +3,8 @@
 	width: 900px;
 	height: 450px;
 	margin: 10px;
-	/*                      1    2    3    4     5     6     7    8    9    10    11   12   13   14   15     */
-	grid-template-columns: 1px 210px 1px 1px 100px 100px 195px 10px 60px 120px 100px 50px 20px;
+	/*                      1    2    3    4    5    6   7    8      9    10   11     */
+	grid-template-columns: 210px 2px 100px 10px 80px 120px 100px 90px 10px;
 	grid-auto-rows: 34px 46px 140px 180px 10px 70px 40px 70px;
 	grid-gap: 4px;
 	justify-items: stretch;
@@ -20,18 +20,18 @@
 	background: #f1f1f1;
 } */
 
-.mixercontrol {
+/* .mixercontrol {
 	grid-column: 4/7;
 	grid-row: 6;
 	padding: 5px;
-	/* border: 1px solid #797777; */
+	/* border: 1px solid #797777; 
 	border-radius: 3px;
 }
 
 .externalio {
 	grid-column: 7/8;
 	grid-row: 6;
-	/* border: 1px solid #797777; */
+	/* border: 1px solid #797777; 
 	border-radius: 3px;
 }
 
@@ -39,9 +39,9 @@
 	grid-column: 8/11;
 	grid-row: 6;
 	padding: 5px;
-	/* border: 1px solid #797777; */
+	/* border: 1px solid #797777; 
 	border-radius: 3px;
-}
+} */
 
 .templates {
 	grid-column: 1/4;
@@ -53,9 +53,9 @@
 
 .graphicscontrol {
 	/* graphics control */
-	grid-column: 4/15;
+	grid-column: 5/15;
 	grid-row: 1/6;
-	margin: 2px;
+	margin: 1px;
 	border-radius: 0px;
 }
 
@@ -81,20 +81,22 @@ th {
 }
 
 .loadunload {
-	grid-column: 6/7;
+	grid-column: 5/8;
 	grid-row: 2/3;
-	/* border: 1px solid rgb(121, 119, 119);
-              border-radius: 3px; */
+	margin: 2px;
+	border: 1px solid #797777;
+	border-radius: 3px;
 }
 
 .templatefiles {
-	grid-column: 1/6;
+	grid-column: 1/5;
 	grid-row: 3/7;
-	margin: 2px;
+	margin: 1px;
 	/* border: 1px solid rgb(121, 119, 119); */
 	border-radius: 4px;
 	height: 415px;
-	width: 210px;
+	width: 320px;
+	padding: 1px;
 	overflow-y: auto;
 	overflow-x: auto;
 }
@@ -105,7 +107,7 @@ th {
 }
 
 .fadeinout {
-	grid-column: 7/11;
+	grid-column: 8/12;
 	grid-row: 2;
 	margin: 2px;
 	border: 1px solid #797777;
@@ -114,7 +116,7 @@ th {
 
 .lockwrench {
 	/* lock wrench reload */
-	grid-column: 11/14;
+	grid-column: 8/10;
 	grid-row: 6/7;
 	border-radius: 3px;
 	background-color: white;
@@ -122,7 +124,7 @@ th {
 }
 
 .boxtype {
-	grid-column: 12/13;
+	grid-column: 8/10;
 	grid-row: 3/5;
 	padding: 5px;
 	border: 1px solid #797777;
@@ -132,12 +134,12 @@ th {
 .filelist {
 	display: block;
 	height: 295px;
-	width: 210px;
+	width: 320px;
 	/* overflow-y: scroll;
     overflow-x: scroll; */
 	border: 0px solid #c6c7c7;
-	margin: 5px;
-	padding: 5px;
+	margin: 2px;
+	padding: 1px;
 }
 
 .leftnav {
@@ -180,7 +182,7 @@ img {
 
 .stagedloaded {
 	/*align-self:end;*/
-	grid-column: 7/14;
+	grid-column: 8/12;
 	grid-row: 3/6;
 	grid-column-start: 0;
 	/* border: 1px solid rgb(121, 119, 119); */
@@ -215,7 +217,7 @@ img {
 }
 
 .staged div {
-	width: 196px;
+	width: 300px;
 }
 
 .staged td {
