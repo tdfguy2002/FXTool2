@@ -4,7 +4,7 @@
 	height: 450px;
 	margin: 10px;
 	/*                      1    2    3    4    5    6   7    8      9    10   11     */
-	grid-template-columns: 210px 2px 100px 10px 80px 120px 100px 90px 10px;
+	grid-template-columns: 210px 2px 100px 10px 80px 120px 100px 190px 230px;
 	grid-auto-rows: 34px 46px 140px 180px 10px 70px 40px 70px;
 	grid-gap: 4px;
 	justify-items: stretch;
@@ -53,7 +53,7 @@
 
 .graphicscontrol {
 	/* graphics control */
-	grid-column: 5/15;
+	grid-column: 5/14;
 	grid-row: 1/6;
 	margin: 1px;
 	border-radius: 0px;
@@ -97,8 +97,8 @@ th {
 	height: 415px;
 	width: 320px;
 	padding: 1px;
-	overflow-y: auto;
-	overflow-x: auto;
+	overflow-y: scroll;
+	overflow-x: scroll;
 }
 
 .namecontains {
@@ -107,7 +107,7 @@ th {
 }
 
 .fadeinout {
-	grid-column: 8/12;
+	grid-column: 8/14;
 	grid-row: 2;
 	margin: 2px;
 	border: 1px solid #797777;
@@ -182,7 +182,7 @@ img {
 
 .stagedloaded {
 	/*align-self:end;*/
-	grid-column: 8/12;
+	grid-column: 8/14;
 	grid-row: 3/6;
 	grid-column-start: 0;
 	/* border: 1px solid rgb(121, 119, 119); */
@@ -192,7 +192,7 @@ img {
 .stagedloaded th {
     padding: 5px;
     margin: 0px;
-	background-color: darkorange;
+	background-color: #b4055c;
 	border-radius: 3px;
 }
 
@@ -202,7 +202,7 @@ img {
 }
 
 .stagedloaded td:nth-child(5) {
-	background-color: blue;
+	background-color: #00b3dc;
 }
 
 .staged table {
@@ -229,7 +229,7 @@ img {
 	padding: 5px;
 	margin: 0px;
 	border-radius: 3px;
-	background-color: #a6b4f3;
+	background-color: #00b3dc;
 }
 
 

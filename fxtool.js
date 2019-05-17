@@ -20,7 +20,7 @@ function displayTemplateFiles() {
         tableRow.appendChild(fileName);
 
         tableRow.onmouseover = function () {
-            name = value.toString();                      /* set name to filename                   */
+            name = value.toString();                                    /* set name to filename                   */
             document.getElementById(name).id = "dragtarget";            /* set element ID to 'dragtarget'         */
             var drag = document.getElementById("dragtarget");           /* set drag to element being hovered over */
             drag.addEventListener("dragstart", function(event) {        /* add event listener to drag element     */
