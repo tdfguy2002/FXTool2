@@ -14,6 +14,10 @@ var imageLoadTallyFiles = new Array;
 var timesCalled = 0;
 
 var lastLoadedLayerClicked = -1;
+var previousLastLoadedLayerClicked = -1;
+
+var stageLayerId = "";
+var previousStageLayerId = "";
 
 let oxtel = new Oxtel();
 let fileManager = new FileManager();
@@ -170,9 +174,41 @@ function fadeDown(val) {
 	}
 }
 
+function onStageLayerClicked(id) {
+	console.log("onStageLayerClicked: id: " + id);
+
+	let element = document.getElementById(previousStageLayerId);
+	if (element) {
+		element.style.backgroundColor = null;	
+	}
+
+	element = document.getElementById(id);
+	if (element) {
+		element.style.backgroundColor = "#5EC4DB";
+	}
+
+	stageLayerId = id;
+	previousStageLayerId = stageLayerId;
+}
+
 function onLoadedLayerClicked(layer) {
 	console.log("onLoadedLayerClicked: layer: " + layer);
+
+	if (previousLastLoadedLayerClicked > 0) {
+		let loadedLayer = document.getElementById("loadedLayer" + previousLastLoadedLayerClicked);
+		let vis = document.getElementById("vis" + previousLastLoadedLayerClicked);
+		loadedLayer.style.backgroundColor = null;
+		vis.style.backgroundColor = null;	
+	}	
+
+	let loadedLayer = document.getElementById("loadedLayer" + layer);
+	let vis = document.getElementById("vis" + layer);
+
+	loadedLayer.style.backgroundColor = "#6BC6DB";
+	vis.style.backgroundColor = "#6BC6DB";
+
 	lastLoadedLayerClicked = layer;
+	previousLastLoadedLayerClicked = lastLoadedLayerClicked;
 }
 
 
