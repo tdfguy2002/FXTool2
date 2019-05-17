@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events">Creating and triggering events</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">Classes</a>
+
+<h2>Dan's Car Class Example</h2>
+
+<p id="model"></p>
+<p id="make"></p>
+<p id="year"></p>
+<p id="color"></p>
+<p id="age"></p>
+<p id="version">version: Unknown</p>
+
+<button type="button" onClick='myCar.updateFirmware()'>Update Firmware</button>
+<button type="button" onClick='changeColor()'>Change Color</button>
+
+<script>
+
+//
+// Define the Car Class
+//
+class Car {
+
+constructor(model, make, year, color) {
+this._model = model;
+this._make = make;
+this._year = year;
+this._color = color;
+}
+// Getters
+get model() { return this._model; }
+get make()  { return this._make;  }
+get year()  { return this._year;  }
+get color() { return this._color; }
+get age() {
+let d = new Date();
+return d.getFullYear() - this._year;
+}
+// Setters
+set color(val) { this._color = val; }
+// Public Functions
+updateFirmware() {
+ 
+this._doTheFirmwareUpdate();
+}  
+// Private Functions
+_doTheFirmwareUpdate() {
+// Nothing to do, so just throw an event
+let event = new CustomEvent(Car.UPDATE_FIRMWARE_EVENT, {
+  detail: {
+     version: "8.0"
+  }
+});
+document.dispatchEvent(event);
+}
+}
+
+// Events
+Car.UPDATE_FIRMWARE_EVENT = "Car.UpdateFirmwareEvent";
+
+// Use the new car class
+let myCar = new Car("Honda", "Insight", 2019, "grey");
+document.getElementById("model").innerHTML = "model: " + myCar.model;
+document.getElementById("make").innerHTML = "make: " + myCar.make;
+document.getElementById("year").innerHTML = "year: " + myCar.year;
+document.getElementById("color").innerHTML = "color: " + myCar.color;
+document.getElementById("age").innerHTML = "age: " + myCar.age;
+
+// Listen for the UPDATE_FIRMWARE_EVENT
+document.addEventListener(Car.UPDATE_FIRMWARE_EVENT, onUpdateFirmwareComplete);
+
+// Handle the UPDATE_FIRMWARE_EVENT
+function onUpdateFirmwareComplete(event) {
+document.getElementById("version").innerHTML = "version: " + event.detail.version;
+}
+
+function changeColor() {
+myCar.color = "red";
+document.getElementById("color").innerHTML = "color: " + myCar.color;
+}
+ 
+</script>
+</body>
+</html>
